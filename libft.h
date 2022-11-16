@@ -6,7 +6,7 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 14:12:40 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/15 18:45:16 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/16 12:31:38 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *s);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-size_t	ft_strlen(char *c);
+size_t	ft_strlen(const char *c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);

@@ -6,21 +6,11 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:49:24 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/15 14:09:05 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/16 12:29:04 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(char *c)
-{
-	int	i;
-
-	i = 0;
-	while (c[i] != 0)
-		i++;
-	return (i);
-}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

@@ -6,7 +6,7 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 12:56:16 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/15 14:09:05 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/16 12:35:31 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	i = 0;
 	if (!s || !f)
-		return (NULL);
+		return ;
 	while (s[i] != '\0')
 	{
 		f(i, s + i);

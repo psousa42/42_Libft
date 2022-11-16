@@ -6,7 +6,7 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:15:22 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/15 14:09:05 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/16 12:30:23 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	word(char const *s, char c)
 		}
 		return (tsla);
 	}
+	return (0);
 }
 
 static int	letter(char const *s, char c, int i)
@@ -53,18 +54,18 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		word;
+	int		whaa;
 	char	**str;
 
 	if (!s)
 		return (NULL);
 	i = 0;
 	j = -1;
-	word = word(s, c);
-	str = (char **)malloc((word + 1) * sizeof(char *));
+	whaa = word(s, c);
+	str = (char **)malloc((whaa + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	while (++j < word)
+	while (++j < whaa)
 	{
 		while (s[i] == c)
 			i++;

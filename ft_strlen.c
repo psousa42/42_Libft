@@ -6,13 +6,13 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:05:13 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/15 17:54:29 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/16 12:16:59 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *c)
+size_t	ft_strlen(const char *c)
 {
 	int	i;
 
