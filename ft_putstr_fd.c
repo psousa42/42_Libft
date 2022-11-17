@@ -6,7 +6,7 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:04:37 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/16 12:36:19 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:44:14 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, &s, ft_strlen(s));
+	int		i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

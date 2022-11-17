@@ -6,7 +6,7 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:55:59 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/15 14:11:55 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:06:46 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t		j;
 
 	i = 0;
-	if (*little == '\0' || little == NULL)
+	if ((len == 0 && !*little) || !*little)
 		return ((char *)big);
+	if (len == 0)
+		return (NULL);
 	while (big[i] != '\0' && i < len)
 	{
 		j = 0;

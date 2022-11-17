@@ -6,74 +6,83 @@
 /*   By: psousa <psousa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:15:22 by psousa            #+#    #+#             */
-/*   Updated: 2022/11/16 12:30:23 by psousa           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:09:08 by psousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word(char const *s, char c)
+static int	ft_cntwrd(char const *s, char c)
 {
-	int	tsla;
-	int	fcbk;
+	int	count;
+	int	i;
 
-	tsla = 0;
-	fcbk = 0;
-	while (*s)
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		if (*s != c && fcbk == 0)
-		{
-			fcbk = 1;
-			tsla++;
-		}
-		else
-		{	
-			if (*s == c)
-				fcbk = 0;
-		s++;
-		}
-		return (tsla);
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] && (s[i] != c))
+			i++;
 	}
-	return (0);
+	return (count);
 }
 
-static int	letter(char const *s, char c, int i)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	int	size;
+	size_t	i;
 
-	size = 0;
-	while (s[i] != c && s[i])
+	i = 0;
+	while (src[i] && i < n)
 	{
-		size++;
+		dst[i] = src[i];
 		i++;
 	}
-	return (size);
+	while (i < n)
+		dst[i++] = '\0';
+	return (dst);
+}
+
+static char	*ft_strndup(const char *s, size_t n)
+{
+	char	*str;
+
+	str = (char *)malloc(sizeof(char) * n + 1);
+	if (!str)
+		return (NULL);
+	ft_strncpy(str, s, n);
+	str[n] = '\0';
+	return (str);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		whaa;
-	char	**str;
+	int		k;
+	char	**tab;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	i = 0;
-	j = -1;
-	whaa = word(s, c);
-	str = (char **)malloc((whaa + 1) * sizeof(char *));
-	if (!str)
+	k = 0;
+	tab = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c) + 1));
+	if (!tab)
 		return (NULL);
-	while (++j < whaa)
+	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		str[j] = ft_substr(s, i, letter(s, c, i));
-		if (!str)
-			return (NULL);
-		i += letter(s, c, i);
+		j = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > j)
+			tab[k++] = ft_strndup(s + j, i - j);
 	}
-	str[j] = 0;
-	return (str);
+	tab[k] = NULL;
+	return (tab);
+	free(tab);
 }
