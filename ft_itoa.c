@@ -17,7 +17,7 @@ static int	ft_digit(long int i)
 	int	count;
 
 	count = 0;
-	if (i < 0)
+	if (i <= 0)
 	{
 		i *= -1;
 		count++;
@@ -43,10 +43,7 @@ char	*ft_itoa(int n)
 		return (0);
 	str[i--] = 0;
 	if (nb == 0)
-	{
-		str = ft_calloc(2, sizeof(char));
 		str[0] = 48;
-	}
 	if (nb < 0)
 	{
 		str[0] = '-';
